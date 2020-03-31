@@ -1,6 +1,8 @@
 package com.sample.test.demo.tests;
 
 import static io.restassured.RestAssured.given;
+
+import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import com.sample.test.demo.utils.BaseTest;
 
@@ -10,7 +12,9 @@ public class DemoTest extends BaseTest {
 
     @Test
     public void demoTest() {
-        given().when().get(url).then().assertThat().statusCode(200);
+        given().when().get(url).then().and().assertThat().statusCode(200);
+
+        Response response=  given().when().get(url).prettyPeek();
     }
 
 

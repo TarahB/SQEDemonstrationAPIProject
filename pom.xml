@@ -24,7 +24,8 @@
 				<configuration>
 					
 					<parallel>methods</parallel>
-					<threadCount>${testng.thread.count}</threadCount>
+					<!--suppress UnresolvedMavenProperty -->
+                    <threadCount></threadCount>
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
