@@ -88,4 +88,22 @@ public class Pizzas extends BaseTest {
 
     }
 
+    //This Test Will Fail Expected: Status Code 408 Actual: 201
+    @Test(description = "Create new pizza invalid pizza no size no toppings")
+    public void createPizzaUnspecified() {
+        Order order = new Order();
+        Pizza pizza = new Pizza();
+        pizza.setPizza("");
+        pizza.setToppings(List.of(""));
+        order.setItems(List.of(pizza));
+
+        Response response = given().
+                contentType(ContentType.JSON).
+                basePath("orders").
+                when().
+                post().prettyPeek();
+
+        response.then().assertThat().statusCode(408).assertThat().body("id", notNullValue()).log().ifError();
+    }
+
 }
