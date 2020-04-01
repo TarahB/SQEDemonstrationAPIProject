@@ -1,14 +1,14 @@
-package com.sample.test.demo.utils;
+package com.sample.test.demo.beans;
 
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+//Beans = Pojos
 @JsonInclude(Include.NON_EMPTY)
 public class Order {
-
-    private String id = "";
+    private String id;
     private List<Pizza> items;
 
     public Order setId(String id) {
@@ -35,7 +35,7 @@ public class Order {
         if (StringUtils.isNotBlank(getId())) {
             result += " id: " + getId();
         }
-        if(getItems()!= null && getItems().size()>0) {
+        if (getItems() != null && getItems().size() > 0) {
             result += " items: " + getItems().toString();
         }
         return result;
