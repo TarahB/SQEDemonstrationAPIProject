@@ -40,6 +40,7 @@ We will be evaluating
  2. Create New Pizza with Valid entry Large 10 Slices - No Toppings and verify Status code 201
  3. Create New Pizza with Invalid entry Medium 10 Slices - 2 Toppings and Verify Status Code 407
  4. Create  New Pizza with Invalid entry No Size - 2 Toppings and Assert that Status Code 408
+ 5. Create New Pizza Unspecified Entry (no size, no toppings) and Assert that Status Code 408
  
  Toppings:
  1. Get all Toppings and verify status code 200
