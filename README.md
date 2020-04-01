@@ -49,6 +49,9 @@ We will be evaluating
  4. Get list of Toppings by "id", verify "id" and "name" are valid and assert that status code 200
  5. Delete Toppings and Assert that status 200
  
+ EndPoints:
+ Cover and verify status codes for all end points
+ 
  
  
  
